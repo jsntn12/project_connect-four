@@ -30,6 +30,7 @@ function makeBoard() {
 
 function makeHtmlBoard() {
 	// TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
+	const htmlBoard = document.getElementById('board');
 
 	// TODO: add comment for this code
 	var top = document.createElement('tr');
