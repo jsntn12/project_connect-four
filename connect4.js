@@ -33,24 +33,26 @@ function makeHtmlBoard() {
 	const htmlBoard = document.getElementById('board');
 
 	// TODO: add comment for this code
-	var top = document.createElement('tr');
-	top.setAttribute('id', 'column-top');
-	top.addEventListener('click', handleClick);
+	// Block of code generates the header row, sets id attribute to "column-top" and adds event listener.
+	var top = document.createElement('tr'); // Creates the first head row element 'column-top'
+	top.setAttribute('id', 'column-top'); // add 'id' to the first head row 'column-top'
+	top.addEventListener('click', handleClick); // adds click event listener to the first head row
 
 	for (var x = 0; x < WIDTH; x++) {
-		var headCell = document.createElement('td');
-		headCell.setAttribute('id', x);
-		top.append(headCell);
+		var headCell = document.createElement('td'); // Creates new 'td' cell for each column
+		headCell.setAttribute('id', x); // Adds 'id' of indicies to the new headCell
+		top.append(headCell); // Adds new cell 'td' to the first head row
 	}
-	htmlBoard.append(top);
+	htmlBoard.append(top); // Adds cells to the board.
 
 	// TODO: add comment for this code
+	// This section the game cells are generated to the board with a dual for loop and set id attribute to #y-x
 	for (var y = 0; y < HEIGHT; y++) {
 		const row = document.createElement('tr');
 		for (var x = 0; x < WIDTH; x++) {
-			const cell = document.createElement('td');
+			const cell = document.createElement('td'); // add "id" to each cell as #y-x. y is row and x the indicies
 			cell.setAttribute('id', `${y}-${x}`);
-			row.append(cell);
+			row.append(cell); // adds cells to the row
 		}
 		htmlBoard.append(row);
 	}
