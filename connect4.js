@@ -83,7 +83,7 @@ function placeInTable(y, x) {
 
 function endGame(msg) {
 	// TODO: pop up alert message
-	alert(msg);
+	setTimeout((msn) => alert(msg), 250);
 }
 
 /** handleClick: handle click of column top to play piece */
