@@ -63,7 +63,7 @@ function makeHtmlBoard() {
 function findSpotForCol(x) {
 	// TODO: write the real version of this, rather than always returning 0
 	for (let spot = HEIGHT - 1; spot > 0; spot--) {
-		if (!board[x][spot]) return spot;
+		if (!board[spot][x]) return spot;
 	}
 	return null;
 }
