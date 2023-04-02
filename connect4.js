@@ -36,6 +36,7 @@ function makeHtmlBoard() {
 	// Block of code generates the header row, sets id attribute to "column-top" and adds event listener.
 	var top = document.createElement('tr'); // Creates the first head row element 'column-top'
 	top.setAttribute('id', 'column-top'); // add 'id' to the first head row 'column-top'
+	top.classList.add('p1');
 	top.addEventListener('click', handleClick); // adds click event listener to the first head row
 
 	for (var x = 0; x < WIDTH; x++) {
@@ -83,7 +84,7 @@ function placeInTable(y, x) {
 
 function endGame(msg) {
 	// TODO: pop up alert message
-	setTimeout((msn) => alert(msg), 250);
+	setTimeout(() => alert(msg), 250);
 }
 
 /** handleClick: handle click of column top to play piece */
@@ -117,6 +118,11 @@ function handleClick(evt) {
 	// switch players
 	// TODO: switch currPlayer 1 <-> 2
 	currPlayer = currPlayer === 1 ? 2 : 1;
+
+	// changes the color of the piece being dropped to the current player
+	let headerColumnColor = document.getElementById('column-top');
+	headerColumnColor.classList.toggle('p1');
+	headerColumnColor.classList.toggle('p2');
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
